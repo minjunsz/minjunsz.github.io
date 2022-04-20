@@ -33,4 +33,5 @@ group :jekyll_plugins do
     gem "jekyll-feed", "~> 0.6"
     gem "jemoji"
     gem "jekyll-include-cache"
+    gem "github-pages"
 end
