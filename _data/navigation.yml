@@ -1,0 +1,10 @@
+# main links
+main:
+  - title: 'About'
+    url: https://mmistakes.github.io/minimal-mistakes/about/
+  - title: 'Categories'
+    url: '/categories'
+  - title: 'Tags'
+    url: '/tags'
+  - title: Machine Learning
+    url: '/categories/ml'
