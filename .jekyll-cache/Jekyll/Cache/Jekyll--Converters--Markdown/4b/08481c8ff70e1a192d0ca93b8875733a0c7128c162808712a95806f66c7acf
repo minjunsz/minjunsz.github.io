@@ -1,7 +1,0 @@
-I"<h1 id="first-ml-post">First ML Post</h1>
-<p>With Latex display block \[\sum\lambda\] <br />
-With Latex inline block \(\sum\lambda\) <br />
-With Latex default \(\sum\lambda\)</p>
-
-<p>Tag로 <code class="language-plaintext highlighter-rouge">mathjax: true</code>를 써줘야 한다.</p>
-:ET
