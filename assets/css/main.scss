@@ -6,3 +6,11 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap');
+
+@font-face {
+    font-family: "D2Coding ligature";
+    src: url("/assets/fonts/D2Coding-Ver1.3.2-20180524-ligature.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
