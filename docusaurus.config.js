@@ -25,6 +25,10 @@ const config = {
       crossorigin: 'anonymous',
     },
   ],
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -113,6 +117,8 @@ const config = {
           id: 'programming',
           routeBasePath: 'programming',
           path: './programming',
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
         },
       ],
       [
