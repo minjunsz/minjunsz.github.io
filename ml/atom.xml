@@ -12,6 +12,8 @@
         <id>ml-interpretation</id>
         <link href="https://minjunsz.github.io/ml/ml-interpretation"/>
         <updated>2022-05-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[test post]]></summary>
+        <content type="html"><![CDATA[<p>test post</p>]]></content>
         <author>
             <name>Minjun Park</name>
             <uri>https://github.com/minjunsz</uri>
