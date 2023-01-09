@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkminjunsz_github_io=self.webpackChunkminjunsz_github_io||[]).push([[734],{804:t=>{t.exports=JSON.parse('{"label":"strategy pattern","permalink":"/programming/tags/strategy-pattern","allTagsPath":"/programming/tags","count":1}')}}]);
