@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Minjun Park Blog Blog</title>
+        <link>https://minjunsz.github.io/ml</link>
+        <description>Minjun Park Blog Blog</description>
+        <lastBuildDate>Mon, 02 May 2022 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Interpretation of Machine Learning Models]]></title>
+            <link>https://minjunsz.github.io/ml/ml-interpretation</link>
+            <guid>ml-interpretation</guid>
+            <pubDate>Mon, 02 May 2022 00:00:00 GMT</pubDate>
+            <category>statistical interpretation</category>
+            <category>loss function</category>
+        </item>
+    </channel>
+</rss>

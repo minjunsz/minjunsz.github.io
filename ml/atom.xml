@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://minjunsz.github.io/ml</id>
+    <title>Minjun Park Blog Blog</title>
+    <updated>2022-05-02T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://minjunsz.github.io/ml"/>
+    <subtitle>Minjun Park Blog Blog</subtitle>
+    <icon>https://minjunsz.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Interpretation of Machine Learning Models]]></title>
+        <id>ml-interpretation</id>
+        <link href="https://minjunsz.github.io/ml/ml-interpretation"/>
+        <updated>2022-05-02T00:00:00.000Z</updated>
+        <author>
+            <name>Minjun Park</name>
+            <uri>https://github.com/minjunsz</uri>
+        </author>
+        <category label="statistical interpretation" term="statistical interpretation"/>
+        <category label="loss function" term="loss function"/>
+    </entry>
+</feed>

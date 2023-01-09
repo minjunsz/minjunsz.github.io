@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkminjunsz_github_io=self.webpackChunkminjunsz_github_io||[]).push([[772],{3008:a=>{a.exports=JSON.parse('{"label":"design pattern","permalink":"/programming/tags/design-pattern","allTagsPath":"/programming/tags","count":1}')}}]);

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://minjunsz.github.io/programming</id>
+    <title>Minjun Park Blog Blog</title>
+    <updated>2022-05-02T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://minjunsz.github.io/programming"/>
+    <subtitle>Minjun Park Blog Blog</subtitle>
+    <icon>https://minjunsz.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[[Design Pattern] Strategy]]></title>
+        <id>strategy-pattern</id>
+        <link href="https://minjunsz.github.io/programming/strategy-pattern"/>
+        <updated>2022-05-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Python strategy pattern]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="python-strategy-pattern">Python strategy pattern<a class="hash-link" href="#python-strategy-pattern" title="Direct link to heading">​</a></h2><p>Strategy pattern</p>]]></content>
+        <author>
+            <name>Minjun Park</name>
+            <uri>https://github.com/minjunsz</uri>
+        </author>
+        <category label="design pattern" term="design pattern"/>
+        <category label="strategy pattern" term="strategy pattern"/>
+        <category label="python" term="python"/>
+        <category label="programming" term="programming"/>
+    </entry>
+</feed>

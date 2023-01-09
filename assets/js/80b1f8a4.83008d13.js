@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkminjunsz_github_io=self.webpackChunkminjunsz_github_io||[]).push([[404],{5593:a=>{a.exports=JSON.parse('{"label":"programming","permalink":"/programming/tags/programming","allTagsPath":"/programming/tags","count":1}')}}]);

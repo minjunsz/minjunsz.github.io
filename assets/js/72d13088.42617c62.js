@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkminjunsz_github_io=self.webpackChunkminjunsz_github_io||[]).push([[239],{9388:t=>{t.exports=JSON.parse('[{"label":"statistical interpretation","permalink":"/ml/tags/statistical-interpretation","count":1},{"label":"loss function","permalink":"/ml/tags/loss-function","count":1}]')}}]);
