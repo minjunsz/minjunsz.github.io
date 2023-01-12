@@ -17,7 +17,7 @@ This post will demonstrate a classical OOP pattern and a more pythonic/functiona
 The strategy pattern is a behavioral design pattern that defines a family of algorithms and lets a program select one of them at runtime.
 Following is a high-level overview of the patterns:
 
-1. Declare an interface which defines a group of algorithms. This familiy is called *Strategy*.
+1. Declare an interface which defines a group of algorithms. This family is called *Strategy*.
 2. Implement concrete strategies following the interface above.
 
 ## Why do we Need Strategy Pattern?
