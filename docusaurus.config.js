@@ -109,6 +109,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       respectPrefersColorScheme: true,
+      image: 'img/logo.png',
     }),
     plugins: [
       [
