@@ -12,8 +12,9 @@
         <id>ml-interpretation</id>
         <link href="https://minjunsz.github.io/ml/ml-interpretation"/>
         <updated>2022-05-02T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[test post]]></summary>
-        <content type="html"><![CDATA[<p>test post</p>]]></content>
+        <summary type="html"><![CDATA[Machine learning(ML) is an approach to learn some pattern of data, and leverage it to infer unseen data. The same statement is valid for statistics.]]></summary>
+        <content type="html"><![CDATA[<p>Machine learning(ML) is an approach to learn some pattern of data, and leverage it to infer unseen data. The same statement is valid for statistics.
+This is because the essence of ML theory comes from statistics. In this post, I will explain how to interpret the output of ML models from a statistical perspective.</p>]]></content>
         <author>
             <name>Minjun Park</name>
             <uri>https://github.com/minjunsz</uri>
