@@ -1,0 +1,9 @@
+.highlight{
+    background-color: var(--ifm-color-primary);
+    border-radius: 5px;
+    color: #ddd;
+    padding: 0.1rem;
+}
+[data-theme='dark'] .highlight{
+    background-color: var(--ifm-color-primary-darkest);
+}
