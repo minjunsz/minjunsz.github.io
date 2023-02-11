@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkminjunsz_github_io=self.webpackChunkminjunsz_github_io||[]).push([[9821],{6254:i=>{i.exports=JSON.parse('{"label":"optimization","permalink":"/ml/tags/optimization","allTagsPath":"/ml/tags","count":1}')}}]);

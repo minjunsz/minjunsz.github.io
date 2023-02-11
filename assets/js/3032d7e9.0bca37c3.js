@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkminjunsz_github_io=self.webpackChunkminjunsz_github_io||[]).push([[3103],{3693:s=>{s.exports=JSON.parse('{"label":"loss function","permalink":"/ml/tags/loss-function","allTagsPath":"/ml/tags","count":1}')}}]);

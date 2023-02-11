@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkminjunsz_github_io=self.webpackChunkminjunsz_github_io||[]).push([[9934],{3253:t=>{t.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"[Design Pattern] Strategy","permalink":"/programming/strategy-pattern"},{"title":"[Design Pattern] Factory Method","permalink":"/programming/factory-method-pattern"}]}')}}]);
