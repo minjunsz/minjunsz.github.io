@@ -1,0 +1,93 @@
+---
+slug: probabilistic-model
+title: Probabilistic Models in Machine Learning
+authors: [minjun]
+tags: [probability, ML theory]
+date: 2022-05-02T10:00
+---
+
+Machine learning(ML) is an approach to learn some pattern of data, and leverage it to predict properties of unseen data. The same statement is valid for statistics.
+This is because the essence of ML theory comes from statistics. In this post, I will explain how to introduce probabilistic models and statistics to ML problems.
+
+<!--truncate-->
+
+## Context Modeling
+
+To apply probability theory on real world problems, we have to express all of the problem-related variables into random variables. Observed examples are called a dataset.
+- When $n$ is the number of samples, dataset $\mathbf{x}$ is
+	- $\mathbf{x}=\{(x_i,y_i): i\in [n]\}$ in a supervised setting
+	- $\mathbf{x}=\{x_i: i\in[n]\}$ in an unsupervised setting
+
+For the ease of notation, I will denote a data point as $x_i$, but it is straight forward to replace $x_i$ with $(x_i,y_i)$ for the supervised setting.
+
+## Assumptions
+
+We have to introduce some assumptions to bridge between machine learning tasks and probability theory. These assumptions may vary from model to model, but they are the most common assumptions widely applied.
+
+### Data Distribution
+
+We believe that there is a distribution $P(X)$ where the data are drawn. **Estimating this distribution is a main objective for most machine learning problems.** This distribution is known when we are dealing with synthetic data but it's unknown for most real-world problems.
+
+### Parametrized Data Distribution
+
+Considering the whole search space is intractable. Therefore, we constrain the search space by assuming that the data distribution follows a certain functional form. This functional form is parametrized by model parameters $\theta$. Thanks to this assumption, we can efficiently explore the search space by optimizing $\theta$.
+
+$$
+X\sim P(X) \approx p(x\vert\theta)
+$$
+It is important to note that **estimating $\theta$ is equivalent to estimating the data distribution $P(X)$.** Therefore, ML methods focuses on optimizing the model parameter $\theta$ based on a given dataset $\mathbf{x}$.
+
+#### Notations on Model Parameter
+
+You may encounter a few different notations for the model parameter $\theta$.
+- $p_\theta(\cdot)$
+	- $\theta$ is unlikely to be of interest.
+	- $\theta$ is used to indicate that the probability distribution is parametrized.
+- $p(\cdot\vert \theta)$
+	- $\theta$ is considered as a random variable.
+	- This notation is used when we applies a Bayesian approach on the parameter $\theta$.
+- $p(\cdot\vert z;\theta)$
+	- $\theta$ is considered as a fixed value, not having a statistical interpretation.
+	- Conditioned variable $z$ and $\theta$ do not have an intrinsic difference. Both are included in the density function with given/fixed values. However, the author tries to differentiate them because $\theta$ does not have a statistical interpretation in the context.
+
+### i.i.d. Sampling
+
+The dataset is assumed to be independent and identically distributed (i.i.d.). Thanks to this assumption, the likelihood of $\mathbf{x}$ becomes a simple product of likelihoods for each data point.
+$$
+P(\mathbf{x}\vert\theta)=\prod_i P(X=x_i\vert\theta)=\prod_i p(x_i\vert\theta)
+$$
+
+## Latent Variable Model
+
+A probability model might contain unobserved variables. We call them *latent variables*, denoted by $z$, and the probability model with latent variables is called *latent variable model*. The joint distribution can be decomposed as follows:
+$$
+p_\theta (\mathbf{x},\mathbf{z}) = p_\theta(\mathbf{x}|\mathbf{z}) p_\theta(\mathbf{z})
+$$
+Therefore, the model is composed of three variables
+- observed random variable $x_i$
+- unboserved (latent) variables $\mathbf{z}=\{z_{i}:i\in [m]\}$
+- model parameter $\theta$
+
+:::info Independence between variables
+We **don't assume independence** between variables in general. We just believe that there are some underlying latent variables that control the events. Each observation may have its own independent latent variables, or all observations may be affected by shared latent variables.
+:::
+
+### Complete/Incomplete Data
+
+The dataset $\mathbf{x}=\{x_1, x_2, ..., x_n\}$ is called *incomplete dataset* because it partially describes the statistical process of the dataset. On the other hand, $\mathbf{x} \cup \mathbf{z} = \{x_1,x_2,...x_n,z_1,z_2,...,z_m\}$ is called *complete dataset* because it fully describes the statistical process of the dataset.
+
+### Why Do We Introduce Latent Variables?
+
+In most cases, marginal likelihood $p_\theta(\mathbf{x})$ is intractable. However, we may but the complete data likelihood $p_\theta(\mathbf{x},\mathbf{z})$ is tractable. This is why we introduce latent variable models for complex problems.
+
+## Notations
+
+Throughout my posts, I'll use the notations below:
+
+- $p(\theta)$: prior distribution (on the model paramter $\theta$)
+- $p(\theta\vert \mathbf{x})$: posterior distribution (on the model parameter $\theta$)
+- $\mathbf{x}=\{x_1,x_2,...,x_n\}$ means a set of observations
+- $\mathbf{z}= \{z_1,z_2,...,z_m\}$ means a set of latent variables
+- $p_{\theta}(\mathbf{x})=p(\mathbf{x}\vert \theta)= \prod_{i}p_{\theta}(x_i)$: marginal likelihood / evidence
+- $p_{\theta}(\mathbf{x},\mathbf{z})$: joint likelihood / complete data likelihood
+- $p_{\theta}(\mathbf{z}\vert \mathbf{x})$: posterior distribution on latent variables

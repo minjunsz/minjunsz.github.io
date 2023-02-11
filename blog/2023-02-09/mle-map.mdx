@@ -1,0 +1,62 @@
+---
+slug: mle-map
+title: "[Optimization] MLE & MAP"
+authors: [minjun]
+tags: [optimization, ML theory]
+---
+
+One of the most important tasks in ML is to optimize parameters in a model. There are various approaches and I'll explain the most fundamental methods (MLE & MAP) in this post.
+
+<!--truncate-->
+
+## context
+
+These concepts works on a [[Probabilistic Model]]. We assume that the data distribution is parametrized by $\theta$ and the likelihood is defined as below:
+$$
+P(\mathbf{x}\vert\theta) = \prod_i p(x_i\vert \theta)
+$$
+## Optimization Methods
+
+### MLE
+
+Maximum Likelihood Estimation(MLE) maximizes the likelihood $P(D\vert\theta)$ by optimizing the model parameter $\theta$. The result of MLE is a point estimation of the model parameter.
+$$
+\theta_{MLE}=\arg\max_\theta P(\mathbf{x}\vert\theta)=\arg\max_\theta\prod_i p(x_i\vert\theta)
+$$
+This fits the model to the observed data. However, MLE is susceptible to overfitting the model when the data is insufficient. For example, some rare events might not be included in the dataset. MLE assigns zero probability to the unobserved events.
+
+### MAP
+
+Unlike MLE,  MAP utilizes the *prior knowledge* on the data distribution. The prior knowledge is represented as a distribution on the parameter $\theta$, $P(\theta)$. Given the observations $D$, we can update the knowledge on $\theta$ by applying Bayes' theorem.
+$$
+P(\theta\vert \mathbf{x})=\frac{P(\mathbf{x}\vert\theta)P(\theta)}{P(\mathbf{x})} \propto P(\mathbf{x}\vert\theta)P(\theta)
+$$
+With the updated distribution on $\theta$, the most plausible value is $\arg\max_\theta P(\theta\vert \mathbf{x})$. This formula can be rewritten in terms of likelihood:
+$$
+\theta_{MAP}=\arg\max_\theta P(\theta\vert \mathbf{x})=\arg\max_\theta \prod_i p(x_i\vert\theta)p(\theta)
+$$
+
+:::info Relationship between MLE and MAP
+If the prior distribution on $\theta$ is an uniform distribution, MAP converges to MLE.
+:::
+
+## MLE with Latent Variable model
+
+In a simple model without latent variables, MLE finds the optimal $\theta$ that maximizes the likelihood $p_\theta(\mathbf{x})$. Now, we introduced [latent variables](../2022-05-02/probabilistic-model.mdx#latent-variable-model) $\mathbf{z}$ to the model. We can still apply MLE by maximizing the likelihood if it is tractable.
+$$
+\begin{align}
+\text{log likelihood} &= \log p_\theta (\mathbf{x})\\
+&= \log \int p_\theta(\mathbf{x},\mathbf{z}) d\mathbf{z} 
+\end{align}
+$$
+However, MLE is inapplicable in most cases. There are two main reasons why we can't use MLE:
+1. Even for a fixed $\theta$, the integral over latent variable $z$ is often intractable. (Evaluating likelihood is intractable.)
+2. Even if we can calculate the log likelihood for all values of $\theta$, maximizing the log likelihood as a function of $\theta$ can be a difficult non-convex optimization problem. (Cannot guarantee to find the global optimum.)
+
+Even if we find an optimal model parameter $\theta_{max}$ somehow, we cannot use it for prediction. To construct the posterior predictive distribution $p_{\theta_{max}}(x_{new}\vert \mathbf{x})$, we need the posterior on the latent variable $p_{\theta_{max}}(\mathbf{z} \vert \mathbf{x})$.  However, the denominator of the posterior is the likelihood $p_{\theta_{max}}(\mathbf{x})=\int p_{\theta_{max}}(\mathbf{x},\mathbf{z}) d\mathbf{z}$, which is intractable in general.
+$$
+\begin{align}
+p_{\theta_{max}}(\mathbf{z}\vert \mathbf{x}) &= \frac{p_{\theta_{max}}(\mathbf{x},\mathbf{z})}{\int_z p_{\theta_{max}}(\mathbf{x},\mathbf{z})d\mathbf{z}}\\
+p_{\theta_{max}}(x_{new} \vert \mathbf{x})&= \int_{\mathbf{z}}p_{\theta_{max}}(x_{new} \vert \mathbf{z})p_{\theta_{max}}(\mathbf{z} \vert \mathbf{x}) d\mathbf{z}
+\end{align}
+$$

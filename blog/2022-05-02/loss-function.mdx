@@ -1,0 +1,72 @@
+---
+slug: ml-interpretation
+title: Statistical Interpretation of Loss Function
+authors: [minjun]
+tags: [loss function, probability, ML theory]
+date: 2022-05-02T12:00
+---
+
+Machine learning(ML) defines a loss function and optimizes its model to minimize the loss. Since ML is based on [probability theory and statistics](./probabilistic-model.mdx), it is reasonable to interpret the loss function from a statistical perspective.
+
+<!--truncate-->
+
+## Model Output as Deterministic Value
+
+We can interpret ML models without statistics. In this case, the output of the model is directly considered as a deterministic solution for the model. In this case, the loss function can have an arbitrary form as far as it satisfies some constraints:
+
+- Loss over a dataset is the sum of individual losses of each data. $Loss(\mathbf{x}) = \sum_{i} Loss(x_i)$
+- It should give a low value if the output is similar to the true label. Although this is not a necessary condition to be a loss function, the loss function is semantically valid when it satisfies this condition.
+
+## Model Output as Noise Distribution Parameter
+
+In statistical interpretation, we assume that the observations include some noise. Therefore, the relationship between input $X$ and output $Y$ is not a deterministic function $Y=f(X)$ but a stochastic process $Y\sim Noise(X)$. We can define the noise distribution to have a parametrized form (ex. Gaussian noise). Then, **the output of the model is considered as the parameters in the noise distribution.**
+$$
+\begin{align}
+Y &\sim Noise\ Dist.\\
+&\sim P(Y \vert w=f_{\theta}(X))
+\end{align}
+$$
+
+:::note
+ - The parameter $\theta$ is the parameter for the ML model e.g. weights in nueral networks.
+ - The parameter $w$ is the parameter for the noise distribution that we defined.
+:::
+
+### Define Loss Function
+
+Let's consider an i-th sample $(x_i, y_i)$. Given the input $x_i$, the likelihood of this sample is $P(Y=y_i\vert w=f_\theta(x_i))$. For the ease of notations, I'll denote it as $p(y_{i}\vert f_{\theta}(x_{i}))$. Thanks to i.i.d. condition on data, total likelihood over the dataset is as follows:
+
+$$
+\begin{align}
+P(X=x_{i},Y=y_{i} \vert \theta) &= p(y_{i}\vert f_{\theta}(x_{i})) &&\quad \text{(likelihood over a single data)}\\
+P(D \vert \theta) &= \prod_{i} p(y_{i} \vert f_{\theta}(x_{i})) &&\quad \text{(likelihood over dataset)}
+\end{align}
+$$
+
+The goal is to _maximize_ the likelihood. Considering that loss functions must be represented as a sum of terms, and it is preferred to _minimize_ the loss, **we use negative log likelihood(NLL) as the loss function**.
+
+$$  
+\begin{align*} \max_\theta \prod_i p(y_i|f_\theta(x_i)) &\iff \max_\theta \sum_i \log p(y_i|f_\theta(x_i)) \\ &\iff \min_\theta \sum_i -\log p(y_i|f_\theta(x_i)) \end{align*}  
+$$
+
+### MSE with Fixed Variance Gaussian Noise
+
+Let's assume that the noise distribution is Gaussian with fixed variance. Then, mean($\mu$) is the only parameter that can be changed when input data($X$) varies. We can rewrite the distribution as follows:
+$$  
+P(Y\vert f_\theta(X)) = \mathcal{N}\Big(Y\vert \mu(X), \sigma\Big)  
+$$
+
+By replacing the $\mu(X)$ with the ML model output $f_\theta(X)$, we can derive that minimizing the negative log likelihood is equivalent to minimizing the squared error.
+
+$$  
+\begin{align*} -\log p(y_i|f_\theta(x_i)) &= -\log [\mathcal{N}\Big(y_i\vert f_\theta(x_i), \sigma\Big)] \\ &\propto \big(y_i-f_\theta(x_i)\big)^{2}\\ \therefore loss\ over\ dataset&\propto \sum_i \big(y_i-f_\theta(x_i)\big)^2\\ &\propto \frac{1}{N}\sum_i \big(y_i-f_\theta(x_i)\big)^2 = mean\ squared\ error \end{align*}  
+$$
+
+### Cross Entropy with Multinomial Distribution Noise
+  
+If we assume the noise distribution to be a multinomial distribution, the loss function must be cross entropy.
+
+## Reference
+
+- [MSE & Guassian Noise](https://towardsdatascience.com/where-does-mean-squared-error-mse-come-from-2002bbbd7806)
+- [Cross Entropy & Multinomial Distribution](https://towardsdatascience.com/a-quick-guide-to-cross-entropy-loss-function-8f3410ec6ab1)
