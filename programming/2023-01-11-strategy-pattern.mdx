@@ -131,3 +131,26 @@ def main() -> None:
 ```
 
 Since any `Callable` with appropriate types can be a strategy, I can use both function and class. Functions are preferred when the implementation does not requires hyper-parameters. On the other hand, callable classes can provide more flexible algorithms because it can store hyper-parameters as its member variable. As you can see in the code above, it is more convenient to use `dataclasses.dataclass` for implementing the callable class.
+
+## Class Diagram
+
+```mermaid
+classDiagram
+	direction LR
+	
+	class Context
+
+	class Strategy
+	<<interface>> Strategy
+	Strategy : +execute()
+
+	class ConcreteStrategy_1
+	ConcreteStrategy_1 : +execute()
+	
+	class ConcreteStrategy_2
+	ConcreteStrategy_2 : + execute()
+
+	Context *-- Strategy
+	Strategy <|.. ConcreteStrategy_1
+	Strategy <|.. ConcreteStrategy_2
+```
