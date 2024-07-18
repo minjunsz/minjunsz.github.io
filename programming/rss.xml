@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Minjun Park Blog Blog</title>
-        <link>https://minjunsz.github.io/programming</link>
+        <link>https://minjunpark.com/programming</link>
         <description>Minjun Park Blog Blog</description>
         <lastBuildDate>Wed, 11 Jan 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,7 +10,7 @@
         <language>en</language>
         <item>
             <title><![CDATA[[Design Pattern] Strategy]]></title>
-            <link>https://minjunsz.github.io/programming/strategy-pattern</link>
+            <link>https://minjunpark.com/programming/strategy-pattern</link>
             <guid>strategy-pattern</guid>
             <pubDate>Wed, 11 Jan 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Strategy pattern is a behavioral pattern that enables selecting an algorithm at runtime.]]></description>
@@ -23,7 +23,7 @@ Following is a high-level overview of the patterns:</p><ol><li>Declare an interf
         </item>
         <item>
             <title><![CDATA[[Design Pattern] Factory Method]]></title>
-            <link>https://minjunsz.github.io/programming/factory-method-pattern</link>
+            <link>https://minjunpark.com/programming/factory-method-pattern</link>
             <guid>factory-method-pattern</guid>
             <pubDate>Mon, 09 Jan 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Factory method is a creational pattern which gives an interface for creating subclasses.]]></description>

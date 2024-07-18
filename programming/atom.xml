@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://minjunsz.github.io/programming</id>
+    <id>https://minjunpark.com/programming</id>
     <title>Minjun Park Blog Blog</title>
     <updated>2023-01-11T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://minjunsz.github.io/programming"/>
+    <link rel="alternate" href="https://minjunpark.com/programming"/>
     <subtitle>Minjun Park Blog Blog</subtitle>
-    <icon>https://minjunsz.github.io/img/favicon.ico</icon>
+    <icon>https://minjunpark.com/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[[Design Pattern] Strategy]]></title>
         <id>strategy-pattern</id>
-        <link href="https://minjunsz.github.io/programming/strategy-pattern"/>
+        <link href="https://minjunpark.com/programming/strategy-pattern"/>
         <updated>2023-01-11T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Strategy pattern is a behavioral pattern that enables selecting an algorithm at runtime.]]></summary>
         <content type="html"><![CDATA[<p>The strategy pattern is a <strong>behavioral pattern</strong> that enables selecting an algorithm at runtime.
@@ -27,7 +27,7 @@ Following is a high-level overview of the patterns:</p><ol><li>Declare an interf
     <entry>
         <title type="html"><![CDATA[[Design Pattern] Factory Method]]></title>
         <id>factory-method-pattern</id>
-        <link href="https://minjunsz.github.io/programming/factory-method-pattern"/>
+        <link href="https://minjunpark.com/programming/factory-method-pattern"/>
         <updated>2023-01-09T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Factory method is a creational pattern which gives an interface for creating subclasses.]]></summary>
         <content type="html"><![CDATA[<p>The factory method is a <strong>creational pattern</strong> which gives an interface for creating subclasses.
