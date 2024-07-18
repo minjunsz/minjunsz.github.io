@@ -10,7 +10,7 @@ const katex = require('rehype-katex');
 const config = {
   title: 'Minjun Park Blog',
   tagline: "Minjun Park's blog with ML contents.",
-  url: 'https://minjunsz.github.io',
+  url: 'https://minjunpark.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -33,7 +33,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'minjunsz', // Usually your GitHub org/user name.
-  projectName: 'minjunsz.github.io', // Usually your repo name.
+  projectName: '/', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -78,9 +78,9 @@ const config = {
             label: "Machine Learning",
             position: "left",
             items: [
-              {to: '/ml', label: "posts"},
-              {to: '/ml/archive', label: "archive"},
-              {to: '/ml/tags', label: "tags"},
+              { to: '/ml', label: "posts" },
+              { to: '/ml/archive', label: "archive" },
+              { to: '/ml/tags', label: "tags" },
             ]
           },
           {
@@ -88,9 +88,9 @@ const config = {
             label: "Programming",
             position: "left",
             items: [
-              {to: '/programming', label: "posts"},
-              {to: '/programming/archive', label: "archive"},
-              {to: '/programming/tags', label: "tags"},
+              { to: '/programming', label: "posts" },
+              { to: '/programming/archive', label: "archive" },
+              { to: '/programming/tags', label: "tags" },
             ]
           },
           {
@@ -112,24 +112,24 @@ const config = {
       respectPrefersColorScheme: true,
       image: 'img/logo.png',
     }),
-    plugins: [
-      [
-        '@docusaurus/plugin-content-blog',
-        {
-          id: 'programming',
-          routeBasePath: 'programming',
-          path: './programming',
-          remarkPlugins: [math],
-          rehypePlugins: [katex],
-        },
-      ],
-      [
-        "@cmfcmf/docusaurus-search-local",
-        {
-          indexDocs: false
-        }
-      ],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'programming',
+        routeBasePath: 'programming',
+        path: './programming',
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
+      },
     ],
+    [
+      "@cmfcmf/docusaurus-search-local",
+      {
+        indexDocs: false
+      }
+    ],
+  ],
 };
 
 
